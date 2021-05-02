@@ -2,9 +2,9 @@
 Checks the COWIN portal every 5 minutes if a '18-44'(default) slot is available and sends a notification email if found.
 
 ## Steps
-1. Add a new application password in Gmail
-App name : vaccinenotifier
-https://support.google.com/accounts/answer/185833?p=InvalidSecondFactor&visit_id=637554658548216477-2576856839&rd=1
+1. Add a new application password in Gmail<br>
+App name : vaccinenotifier<br>
+https://support.google.com/accounts/answer/185833?p=InvalidSecondFactor&visit_id=637554658548216477-2576856839&rd=1<br>
 Ensure 2 factor authentication is enabled for the option
 
 2. Clone the repository
@@ -19,12 +19,14 @@ Ensure 2 factor authentication is enabled for the option
 
 4. To start the app, run the following commands on terminal
 
-> npm install 
-> npm run start
-
+```
+ npm install 
+ npm run start
+```
 5. To stop the app, run the following commands on terminal
 
-> npm run stop
-
+```
+ npm run stop
+```
 
 
