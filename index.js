@@ -1,4 +1,5 @@
 require("dotenv").config()
+const cronJob = require("node-cron")
 const axios = require("axios")
 const moment = require("moment")
 const notifier = require("./notifier")
@@ -9,7 +10,9 @@ const DATE = process.env.DATE || moment().format("DD-MM-YYYY")
 
 async function main() {
   try {
-    await checkAvailability()
+    cronJob.schedule("*/5 * * * *", async () => {
+      await checkAvailability()
+    })
   } catch (e) {
     console.log(e)
     throw e
@@ -35,6 +38,7 @@ async function checkAvailability() {
     let centers = response.data.centers
     let myCenters = centers.filter(
       (center) =>
+        //(center.center_id == 611640 || center.center_id == 561310) &&
         center.sessions.filter(
           (session) =>
             session.min_age_limit == process.env.MIN_AGE &&
